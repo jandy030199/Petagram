@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutActivity"
+    android:orientation="vertical">
+
+    <include android:id="@+id/myActionBar"
+        layout="@layout/my_action_bar">
+    </include>
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:layout_width="@dimen/cimv_width"
+        android:layout_height="@dimen/cimv_height"
+        android:src="@drawable/amadeus"
+        app:civ_border_color="@color/purple_700"
+        app:civ_border_width="@dimen/cimv_border"
+        app:civ_shadow="true"
+        app:civ_shadow_radius="@dimen/cimv_radius"
+        app:civ_shadow_color="@color/teal_200"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dev_name"
+        android:textSize="@dimen/text_size"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:layout_marginBottom="@dimen/margin_bottom"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dev_desc"
+        android:textSize="@dimen/text_size"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:layout_marginBottom="@dimen/margin_bottom"/>
+
+
+
+
+</LinearLayout>

@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <item
-            android:id="@+id/mAbout"
-            android:title="@string/menu_about"
+            android:id="@+id/mContact"
+            android:title="@string/menu_contacto"
             android:orderInCategory="100"
             >
 
         </item>
 
         <item
-            android:id="@+id/mSettings"
-            android:title="@string/menu_settings"
+            android:id="@+id/mAbout"
+            android:title="@string/menu_acerca"
             android:orderInCategory="100"
             >
 

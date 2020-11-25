@@ -6,6 +6,7 @@
     android:elevation="@dimen/actionbar_elevation"
     android:background="@color/purple_500"
     app:titleTextColor="@color/white"
-    android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+    app:layout_scrollFlags="scroll|enterAlways">
+
 
 </androidx.appcompat.widget.Toolbar>

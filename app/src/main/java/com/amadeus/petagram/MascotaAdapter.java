@@ -43,6 +43,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
             @Override
             public void onClick(View view) {
 
+                /*BETA LIKE */
               if(myLike == true){
                   holder.tvNroLikes.setText(String.valueOf(mascota.getNroLikes()+1));
                   holder.btnLike.setImageResource(R.drawable.bone_color);

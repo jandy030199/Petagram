@@ -8,4 +8,11 @@
     <dimen name="linear_top">10dp</dimen>
     <dimen name="margin_imgv_right_left">10dp</dimen>
     <dimen name="text_size">20dp</dimen>
+    <dimen name="button_text_size">16dp</dimen>
+    <dimen name="cimv_height">240dp</dimen>
+    <dimen name="cimv_width">240dp</dimen>
+    <dimen name="cimv_border">4dp</dimen>
+    <dimen name="cimv_radius">8dp</dimen>
+    <dimen name="rose_cimv">180dp</dimen>
+    <dimen name="rose_wandh">120dp</dimen>
 </resources>
