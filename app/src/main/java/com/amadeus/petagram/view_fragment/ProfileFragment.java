@@ -1,16 +1,18 @@
-package com.amadeus.petagram;
+package com.amadeus.petagram.view_fragment;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+
+import com.amadeus.petagram.R;
+import com.amadeus.petagram.adapter.ProfilePetAdapter;
+import com.amadeus.petagram.pojo.Mascota;
 
 import java.util.ArrayList;
 
@@ -41,15 +43,15 @@ public class ProfileFragment extends Fragment {
 
         mascotasFotos = new ArrayList<Mascota>();
 
-        mascotasFotos.add(new Mascota("Rose",3,R.drawable.rose));
-        mascotasFotos.add(new Mascota("Rose",2,R.drawable.rose));
-        mascotasFotos.add(new Mascota("Rose",4,R.drawable.rose));
-        mascotasFotos.add(new Mascota("Rose",2,R.drawable.rose));
-        mascotasFotos.add(new Mascota("Rose",1,R.drawable.rose));
-        mascotasFotos.add(new Mascota("Rose",3,R.drawable.rose));
-        mascotasFotos.add(new Mascota("Rose",2,R.drawable.rose));
-        mascotasFotos.add(new Mascota("Rose",4,R.drawable.rose));
-        mascotasFotos.add(new Mascota("Rose",2,R.drawable.rose));
+        mascotasFotos.add(new Mascota("Rose",3,R.drawable.rose,4));
+        mascotasFotos.add(new Mascota("Rose",2,R.drawable.rose,4));
+        mascotasFotos.add(new Mascota("Rose",4,R.drawable.rose,4));
+        mascotasFotos.add(new Mascota("Rose",2,R.drawable.rose,4));
+        mascotasFotos.add(new Mascota("Rose",1,R.drawable.rose,4));
+        mascotasFotos.add(new Mascota("Rose",3,R.drawable.rose,4));
+        mascotasFotos.add(new Mascota("Rose",2,R.drawable.rose,4));
+        mascotasFotos.add(new Mascota("Rose",4,R.drawable.rose,4));
+        mascotasFotos.add(new Mascota("Rose",2,R.drawable.rose,4));
 
 
     }

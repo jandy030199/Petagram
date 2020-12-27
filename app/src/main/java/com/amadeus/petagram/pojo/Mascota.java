@@ -1,15 +1,21 @@
-package com.amadeus.petagram;
+package com.amadeus.petagram.pojo;
 
 public class Mascota {
 
     private String nombre;
-    private int nroLikes;
+    private int nroLikes = 0;
     private int foto;
+    private int id;
 
-    public Mascota(String nombre, int nroLikes, int foto) {
+    public Mascota(String nombre, int nroLikes, int foto, int id) {
         this.nombre = nombre;
         this.nroLikes = nroLikes;
         this.foto = foto;
+        this.id = id;
+    }
+
+    public Mascota() {
+
     }
 
     public String getNombre() {
@@ -34,5 +40,13 @@ public class Mascota {
 
     public void setFoto(int foto) {
         this.foto = foto;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

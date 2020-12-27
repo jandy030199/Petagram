@@ -1,26 +1,36 @@
-package com.amadeus.petagram;
+package com.amadeus.petagram.adapter;
 
-import android.provider.ContactsContract;
+import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.amadeus.petagram.R;
+import com.amadeus.petagram.db.ConstructorMascotas;
+import com.amadeus.petagram.pojo.Mascota;
 
 import java.util.ArrayList;
 
 public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaViewHolder> {
 
-    public MascotaAdapter(ArrayList<Mascota> mascotas) {
+    ArrayList<Mascota> mascotas;
+    Activity activity;
+
+    public MascotaAdapter(ArrayList<Mascota> mascotas, Activity activity) {
         this.mascotas = mascotas;
+        this.activity = activity;
+
     }
 
-    ArrayList<Mascota> mascotas;
-    boolean myLike = true;
+
+
 
 
     @Override
@@ -36,25 +46,17 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         Mascota mascota = mascotas.get(position);
         holder.ivFoto.setImageResource(mascota.getFoto());
         holder.tvNombre.setText(mascota.getNombre());
-        holder.tvNroLikes.setText(String.valueOf(mascota.getNroLikes()));
+        holder.tvNroLikes.setText(String.valueOf(mascota.getNroLikes() + " Likes"));
 
 
         holder.btnLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                /*BETA LIKE */
-              if(myLike == true){
-                  holder.tvNroLikes.setText(String.valueOf(mascota.getNroLikes()+1));
-                  holder.btnLike.setImageResource(R.drawable.bone_color);
-                  myLike = false;
-              }
+              ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+              constructorMascotas.darLikeMascota(mascota);
+              holder.tvNroLikes.setText(constructorMascotas.obtenerLikes(mascota) + " Likes");
 
-              else {
-                  holder.tvNroLikes.setText(String.valueOf(mascota.getNroLikes()));
-                  holder.btnLike.setImageResource(R.drawable.bone);
-                  myLike = true;
-              }
 
             }
         });
@@ -73,14 +75,14 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         private ImageView   ivFoto;
         private TextView    tvNombre;
         private  TextView   tvNroLikes;
-        private ImageView btnLike;
+        private ImageButton btnLike;
 
         public MascotaViewHolder( View itemView) {
             super(itemView);
             ivFoto      = (ImageView) itemView.findViewById(R.id.ivFoto);
             tvNombre    = (TextView) itemView.findViewById(R.id.tvNombre);
             tvNroLikes  = (TextView) itemView.findViewById(R.id.tvNroLikes);
-            btnLike      = (ImageView) itemView.findViewById(R.id.btnLike);
+            btnLike      = (ImageButton) itemView.findViewById(R.id.btnLike);
 
         }
     }

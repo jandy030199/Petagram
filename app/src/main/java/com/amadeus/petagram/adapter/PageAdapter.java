@@ -1,4 +1,4 @@
-package com.amadeus.petagram;
+package com.amadeus.petagram.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

@@ -7,12 +7,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.amadeus.petagram.adapter.MascotaAdapter;
+import com.amadeus.petagram.pojo.Mascota;
+import com.amadeus.petagram.presenter.FiveActivityPresenter;
+import com.amadeus.petagram.presenter.IFiveActivityPresenter;
+import com.amadeus.petagram.view_fragment.IFiveActivityView;
+
 import java.util.ArrayList;
 
-public class FiveActivity extends AppCompatActivity {
+public class FiveActivity extends AppCompatActivity implements IFiveActivityView {
 
     private RecyclerView myFiveList;
     ArrayList mascotasFive;
+    private FiveActivityPresenter fiveActivityPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,32 +33,30 @@ public class FiveActivity extends AppCompatActivity {
 
         myFiveList = (RecyclerView) findViewById(R.id.rvFiveMascotas);
 
+        fiveActivityPresenter = new FiveActivityPresenter(this, getBaseContext());
+
+
+        }
+
+
+    @Override
+    public void generarLinearLayoutVetical() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
         myFiveList.setLayoutManager(linearLayoutManager);
-        inicializarFiveMascotas();
-        inicializarAdapter();
+    }
+
+    @Override
+    public MascotaAdapter createAdapter(ArrayList<Mascota> mascotasFive) {
+        MascotaAdapter mascotaAdapter = new MascotaAdapter(mascotasFive,this);
+        return mascotaAdapter;
 
     }
 
-    public void inicializarAdapter(){
-
-        MascotaAdapter adapter = new MascotaAdapter(mascotasFive);
-        myFiveList.setAdapter(adapter);
-    }
-
-    public void inicializarFiveMascotas(){
-
-        mascotasFive = new ArrayList<Mascota>();
-
-        mascotasFive.add(new Mascota("Foquisin",4,R.drawable.foquisin));
-        mascotasFive.add(new Mascota("Orange",3,R.drawable.orange));
-        mascotasFive.add(new Mascota("Shiro",4,R.drawable.shiro));
-        mascotasFive.add(new Mascota("Rose",2,R.drawable.rose));
-        mascotasFive.add(new Mascota("Sunshine",2,R.drawable.sunshine));
+    @Override
+    public void inicializarAdapter(MascotaAdapter mascotaAdapter) {
+        myFiveList.setAdapter(mascotaAdapter);
 
     }
-
-
 }
