@@ -168,7 +168,7 @@ public class Database extends SQLiteOpenHelper {
 
         if(fiveId.isEmpty()){
 
-            Toast.makeText(context,"SIN FAVORITOS",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context,"AGREGAR 5 FAVORITOS!!!",Toast.LENGTH_SHORT).show();
         }
 
         else{
