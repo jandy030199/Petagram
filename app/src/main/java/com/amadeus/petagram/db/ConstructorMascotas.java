@@ -29,7 +29,7 @@ public class ConstructorMascotas {
 
     public void insertarMascotas(Database database){
 
-        /*ContentValues contentValues = new ContentValues();
+        ContentValues contentValues = new ContentValues();
 
         contentValues.put(DBConstants.TABLE_MASCOTA_NAME, "Catty");
         contentValues.put(DBConstants.TABLE_MASCOTA_PHOTO, R.drawable.catty);
@@ -69,7 +69,7 @@ public class ConstructorMascotas {
 
         contentValues.put(DBConstants.TABLE_MASCOTA_NAME, "Violet");
         contentValues.put(DBConstants.TABLE_MASCOTA_PHOTO, R.drawable.violet);
-        database.insertarMascota(contentValues);*/
+        database.insertarMascota(contentValues);
 
 
     }
